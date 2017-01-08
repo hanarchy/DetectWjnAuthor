@@ -23,7 +23,3 @@ wjnの「[実録]女のSEX告白」記事の書き手を文章から判定する
 ## Licence
 
 [MIT](https://github.com/hanarchy/DetectWjnAuthor/LICENCE)
-
-## Author
-
-[hanarchy](https://github.com/hanarchy)
