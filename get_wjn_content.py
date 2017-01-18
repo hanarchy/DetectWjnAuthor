@@ -41,12 +41,13 @@ def get_ksk_url_list():
             else:
                 url = WJN_URL + str(i)
             print(url)
-
+            # wjnのサイトをスクレイピングする時はuserAgentを設定する必要あり
             html = requests.get(url, headers={'User-Agent': 'test'})
             soup = BeautifulSoup(html.content, "html5lib",
                                  from_encoding='Shift-JIS')
             wjn_cat7_index_link_list.extend(soup.find_all('a',
                                                           {"class": "title"}))
+            # 待ち時間必須
             time.sleep(1)
         with open(index_list_pkl, 'wb') as f:
             pickle.dump(wjn_cat7_index_link_list, f)
