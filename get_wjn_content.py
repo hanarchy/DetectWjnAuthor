@@ -16,12 +16,12 @@ sys.setrecursionlimit(1000000)
 
 class WjnContents():
     def __init__(self):
-        ksk_url_list = get_ksk_url_list()
-        ksk_contents = get_ksk_contents(ksk_url_list)
-        self.contents, self.labels = detect_author(ksk_contents)
+        ksk_url_list = download_ksk_url_list()
+        ksk_contents = download_article_contents(ksk_url_list)
+        self.contents, self.labels = label_author(ksk_contents)
 
 
-def get_ksk_url_list():
+def download_ksk_url_list():
     # wjnのサイトから奈倉氏、柏木氏が書く記事である、
     # 官能小説作家書き下ろし[実録]がタイトルにつく記事のURLをlist化
     # TODO:取得データ数を増やす
@@ -57,7 +57,7 @@ def get_ksk_url_list():
     return ksk_url_list
 
 
-def get_ksk_contents(ksk_url_list, single=False):
+def download_article_contents(ksk_url_list, single=False):
     # 記事から本文を抜き出して、pickle化
     if single:
         contents = []
@@ -87,7 +87,7 @@ def get_ksk_contents(ksk_url_list, single=False):
     return contents
 
 
-def detect_author(ksk_contents):
+def label_author(ksk_contents):
 
     author_removed_contents = []
     author_labels = []

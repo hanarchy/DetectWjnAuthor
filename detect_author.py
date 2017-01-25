@@ -1,4 +1,4 @@
-from get_wjn_content import get_ksk_contents
+from get_wjn_content import download_article_contents
 from analysis_morphologic import create_datasets
 import tensorflow as tf
 import sys
@@ -20,7 +20,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
     if args.o:
         url = [args.o]
-        content_text = get_ksk_contents(url, single=True)
+        content_text = download_article_contents(url, single=True)
         contents = [i.text for i in content_text]
     elif args.s:
         contents = [args.s]
