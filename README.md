@@ -21,6 +21,6 @@ wjnの「[実録]女のSEX告白」記事の書き手を文章から判定する
 
 `python3 detect_author.py -o [url]`
 
-## Licence
+## License
 
-[MIT](https://github.com/hanarchy/DetectWjnAuthor/LICENSE)
+[MIT](https://github.com/hanarchy/DetectWjnAuthor/master/LICENSE)
